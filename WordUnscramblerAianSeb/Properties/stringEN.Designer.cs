@@ -124,15 +124,6 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter a word to match.
-        /// </summary>
-        internal static string Option_M2 {
-            get {
-                return ResourceManager.GetString("Option M2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Enter full path with the file name.
         /// </summary>
         internal static string OptionF {
@@ -156,6 +147,15 @@ namespace WordUnscramblerAianSeb.Properties {
         internal static string OptionM {
             get {
                 return ResourceManager.GetString("OptionM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a word to match.
+        /// </summary>
+        internal static string OptionM2 {
+            get {
+                return ResourceManager.GetString("OptionM2", resourceCulture);
             }
         }
         

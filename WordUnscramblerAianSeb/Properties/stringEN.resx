@@ -138,9 +138,6 @@
   <data name="NotFoundFile" xml:space="preserve">
     <value>These files cannot be found.</value>
   </data>
-  <data name="Option M2" xml:space="preserve">
-    <value>Enter a word to match</value>
-  </data>
   <data name="OptionF" xml:space="preserve">
     <value>Enter full path with the file name</value>
   </data>
@@ -149,6 +146,9 @@
   </data>
   <data name="OptionM" xml:space="preserve">
     <value>Enter word(s) manually or as a file F or Manual M</value>
+  </data>
+  <data name="OptionM2" xml:space="preserve">
+    <value>Enter a word to match</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Enter scrambled words with File (F) or Manually (M)</value>
