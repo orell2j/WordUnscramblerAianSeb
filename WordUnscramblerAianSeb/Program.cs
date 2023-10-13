@@ -43,22 +43,22 @@ namespace WordUnscramblerAianSeb
 
             try
             {
-                Console.WriteLine("Enter scrambled word(s) manually or as a file: F - file / M - manual");
+                Console.WriteLine(_resourceManager.GetString("Options"));
 
-                String option = Console.ReadLine() ?? throw new Exception("String is empty");
+                String option = Console.ReadLine() ?? throw new Exception(_resourceManager.GetString("emptyString"));
 
                 switch (option.ToUpper())
                 {
                     case "F":
-                        Console.WriteLine("Enter full path including the file name: ");
+                        Console.WriteLine(_resourceManager.GetString("OptionF"));
                         ExecuteScrambledWordsInFileScenario();
                         break;
                     case "M":
-                        Console.WriteLine("Enter word(s) manually (separated by commas if multiple): ");
+                        Console.WriteLine(_resourceManager.GetString("OptionM2"));
                         ExecuteScrambledWordsManualEntryScenario();
                         break;
                     default:
-                        Console.WriteLine("The entered option was not recognized.");
+                        Console.WriteLine(_resourceManager.GetString("FalseOption"));
                         break;
                 }
 
@@ -77,12 +77,16 @@ namespace WordUnscramblerAianSeb
         {
             var filename = Console.ReadLine();
             string[] scrambledWords = _fileReader.Read(filename);
+            if (scrambledWords == null || !scrambledWords.Any())
+            {
+                Console.WriteLine(_resourceManager.GetString("NotFoundFile"));
+                return;
+            }
             DisplayMatchedUnscrambledWords(scrambledWords);
         }
 
         private static void ExecuteScrambledWordsManualEntryScenario()
         {
-            var nameFile = Console.ReadLine();
             string input = Console.ReadLine();
             string[] scrambledWords = input.Split(',');
             DisplayMatchedUnscrambledWords(scrambledWords);
@@ -98,14 +102,15 @@ namespace WordUnscramblerAianSeb
 
             if (matchedWords.Any())
             {
+                Console.WriteLine(_resourceManager.GetString("MatchedWord"));
                 foreach (var matchedWord in matchedWords)
                 {
-                    Console.WriteLine($"Match found for {matchedWord.ScrambledWord}: {matchedWord.Word}");
+                    Console.WriteLine($"{_resourceManager.GetString("IsMatch")} for {matchedWord.ScrambledWord}: {matchedWord.Word}");
                 }
             }
             else
             {
-                Console.WriteLine("No matches found.");
+                Console.WriteLine(_resourceManager.GetString("NotFoundFile"));
             }
         }
     }

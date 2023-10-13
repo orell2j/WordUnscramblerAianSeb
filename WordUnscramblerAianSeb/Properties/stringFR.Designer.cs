@@ -79,7 +79,7 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Impossible de lire le fichier spécifié..
+        ///   Looks up a localized string similar to Impossible de lire le fichier spécifié..
         /// </summary>
         internal static string FalseFile {
             get {
@@ -88,7 +88,7 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  L&apos;option n&apos;a pas été reconnue..
+        ///   Looks up a localized string similar to L&apos;option n&apos;a pas été reconnue..
         /// </summary>
         internal static string FalseOptions {
             get {
@@ -106,7 +106,7 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to , Mots Correspondants :.
+        ///   Looks up a localized string similar to Mots Correspondants :.
         /// </summary>
         internal static string MatchedWord {
             get {
@@ -115,7 +115,7 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Ces fichiers ne peuvent pas être trouvés..
+        ///   Looks up a localized string similar to Ces fichiers ne peuvent pas être trouvés..
         /// </summary>
         internal static string NotFoundFile {
             get {
@@ -124,7 +124,7 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Entrez le chemin complet avec le nom du fichier.
+        ///   Looks up a localized string similar to Entrez le chemin complet avec le nom du fichier.
         /// </summary>
         internal static string OptionF {
             get {
@@ -151,7 +151,7 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Entrez un mot à faire correspondre.
+        ///   Looks up a localized string similar to Entrez un mot à faire correspondre.
         /// </summary>
         internal static string OptionM2 {
             get {
@@ -160,7 +160,7 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Entrez des mots brouillés avec Fichier (F) ou Manuellement (M).
+        ///   Looks up a localized string similar to Entrez des mots brouillés avec Fichier (F) ou Manuellement (M).
         /// </summary>
         internal static string Options {
             get {

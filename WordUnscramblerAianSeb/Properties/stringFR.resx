@@ -124,22 +124,22 @@
     <value>L'espace est vide, veuillez entrer une valeur.</value>
   </data>
   <data name="FalseFile" xml:space="preserve">
-    <value> Impossible de lire le fichier spécifié.</value>
+    <value>Impossible de lire le fichier spécifié.</value>
   </data>
   <data name="FalseOptions" xml:space="preserve">
-    <value> L'option n'a pas été reconnue.</value>
+    <value>L'option n'a pas été reconnue.</value>
   </data>
   <data name="IsMatch" xml:space="preserve">
     <value>Correspondances</value>
   </data>
   <data name="MatchedWord" xml:space="preserve">
-    <value>, Mots Correspondants :</value>
+    <value>Mots Correspondants :</value>
   </data>
   <data name="NotFoundFile" xml:space="preserve">
-    <value> Ces fichiers ne peuvent pas être trouvés.</value>
+    <value>Ces fichiers ne peuvent pas être trouvés.</value>
   </data>
   <data name="OptionF" xml:space="preserve">
-    <value> Entrez le chemin complet avec le nom du fichier</value>
+    <value>Entrez le chemin complet avec le nom du fichier</value>
   </data>
   <data name="OptionF2" xml:space="preserve">
     <value>Entrez un fichier à des fins de correspondance</value>
@@ -148,10 +148,10 @@
     <value>Entrez des mots manuellement ou un fichier F ou Manuel M</value>
   </data>
   <data name="OptionM2" xml:space="preserve">
-    <value> Entrez un mot à faire correspondre</value>
+    <value>Entrez un mot à faire correspondre</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value> Entrez des mots brouillés avec Fichier (F) ou Manuellement (M)</value>
+    <value>Entrez des mots brouillés avec Fichier (F) ou Manuellement (M)</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Voulez-vous recommencer (o/n)</value>
