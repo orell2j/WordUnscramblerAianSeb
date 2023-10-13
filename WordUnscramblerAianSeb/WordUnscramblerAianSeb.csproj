@@ -72,5 +72,9 @@
       <LastGenOutput>stringFR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\scrambledWords.txt" />
+    <Content Include="Properties\wordlist.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
