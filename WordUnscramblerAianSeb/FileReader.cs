@@ -11,7 +11,7 @@ namespace WordUnscramblerAianSeb
     {
         public string[] Read(string filename)
         {
-            // Your Code here!
+          
             try
             {
                 return File.ReadAllLines(filename);

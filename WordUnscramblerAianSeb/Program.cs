@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Globalization;
+using System.Linq;
+using System.Resources;
+using System.Threading;
 
 namespace WordUnscramblerAianSeb
 {
@@ -12,6 +11,7 @@ namespace WordUnscramblerAianSeb
     {
         private static readonly FileReader _fileReader = new FileReader();
         private static readonly WordMatcher _wordMatcher = new WordMatcher();
+        private static ResourceManager _resourceManager;
 
         static void Main(string[] args)
         {
@@ -26,19 +26,20 @@ namespace WordUnscramblerAianSeb
                 // Set the program to use French (French Canada) culture.
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-CA");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-CA");
+                _resourceManager = new ResourceManager("WordUnscramblerAianSeb.Properties.stringFR", typeof(Program).Assembly);
             }
             else
             {
                 // Default to English culture.
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                _resourceManager = new ResourceManager("WordUnscramblerAianSeb.Properties.stringEN", typeof(Program).Assembly);
             }
 
             // Access localized strings from resource files.
-            string welcomeMessage = Resources.WelcomeMessage; // Accesses the appropriate resource based on the current culture.
+            string welcomeMessage = _resourceManager.GetString("WelcomeMessage");
 
             Console.WriteLine(welcomeMessage);
-
 
             try
             {
