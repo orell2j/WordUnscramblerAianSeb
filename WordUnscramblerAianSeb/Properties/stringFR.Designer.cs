@@ -61,7 +61,7 @@ namespace WordUnscramblerAianSeb.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voulez-vous continuer ? (o/n).
+        ///   Looks up a localized string similar to Voulez-vous continuer ? (y/n).
         /// </summary>
         internal static string Continuation {
             get {

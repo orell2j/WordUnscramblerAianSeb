@@ -15,9 +15,9 @@ namespace WordUnscramblerAianSeb
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose your language preference:");
-            Console.WriteLine("1 - English");
-            Console.WriteLine("2 - French (French Canada)");
+            Console.WriteLine(Constants.LanguagePreference);
+            Console.WriteLine(Constants.english);
+            Console.WriteLine(Constants.french);
 
             string choice = Console.ReadLine();
 
@@ -26,14 +26,14 @@ namespace WordUnscramblerAianSeb
                 // Set the program to use French (French Canada) culture.
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-CA");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-CA");
-                _resourceManager = new ResourceManager("WordUnscramblerAianSeb.Properties.stringFR", typeof(Program).Assembly);
+                _resourceManager = new ResourceManager(Constants.stringFR, typeof(Program).Assembly);
             }
             else
             {
                 // Default to English culture.
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                _resourceManager = new ResourceManager("WordUnscramblerAianSeb.Properties.stringEN", typeof(Program).Assembly);
+                _resourceManager = new ResourceManager(Constants.stringEN, typeof(Program).Assembly);
             }
 
             // Access localized strings from resource files.
@@ -41,7 +41,7 @@ namespace WordUnscramblerAianSeb
 
             Console.WriteLine(welcomeMessage);
 
-            try
+            while(true)
             {
                 Console.WriteLine(_resourceManager.GetString("Options"));
 
@@ -62,15 +62,24 @@ namespace WordUnscramblerAianSeb
                         break;
                 }
 
-                Console.ReadLine();
+                Console.WriteLine(_resourceManager.GetString("Continuation"));
 
+                string continueOption = Console.ReadLine() ?? string.Empty;
+
+                while (!continueOption.Equals("Y", StringComparison.OrdinalIgnoreCase) &&
+                   !continueOption.Equals("N", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine(_resourceManager.GetString("Redo"));
+                    continueOption = Console.ReadLine() ?? string.Empty;
+                }
+
+                if (continueOption.Equals("N", StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
 
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("The program will be terminated." + ex.Message);
 
-            }
         }
 
         private static void ExecuteScrambledWordsInFileScenario()
@@ -79,7 +88,7 @@ namespace WordUnscramblerAianSeb
             string[] scrambledWords = _fileReader.Read(filename);
             if (scrambledWords == null || !scrambledWords.Any())
             {
-                Console.WriteLine(_resourceManager.GetString("NotFoundFile"));
+                Console.WriteLine(_resourceManager.GetString(Constants.FileNotFound));
                 return;
             }
             DisplayMatchedUnscrambledWords(scrambledWords);
@@ -95,7 +104,7 @@ namespace WordUnscramblerAianSeb
         private static void DisplayMatchedUnscrambledWords(string[] scrambledWords)
         {
             //read the list of words from the system file. 
-            string[] wordList = _fileReader.Read("wordlist.txt");
+            string[] wordList = _fileReader.Read(Constants.WordList);
 
             //call a word matcher method to get a list of structs of matched words.
             List<MatchedWord> matchedWords = _wordMatcher.Match(scrambledWords, wordList);
@@ -110,7 +119,7 @@ namespace WordUnscramblerAianSeb
             }
             else
             {
-                Console.WriteLine(_resourceManager.GetString("NotFoundFile"));
+                Console.WriteLine(_resourceManager.GetString(Constants.FileNotFound));
             }
         }
     }
